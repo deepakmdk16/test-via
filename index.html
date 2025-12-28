@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Forecast App</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-cloud-sun"></i> Weather Forecast</h1>
+            <p class="subtitle">Get accurate weather information for any location</p>
+        </header>
+
+        <div class="search-section">
+            <div class="search-box">
+                <input type="text" id="cityInput" placeholder="Enter city name..." />
+                <button id="searchBtn" class="btn btn-primary">
+                    <i class="fas fa-search"></i> Search
+                </button>
+                <button id="locationBtn" class="btn btn-secondary">
+                    <i class="fas fa-location-arrow"></i> Use My Location
+                </button>
+            </div>
+        </div>
+
+        <div id="errorMessage" class="error-message"></div>
+        <div id="loadingSpinner" class="loading-spinner">
+            <i class="fas fa-spinner fa-spin"></i> Loading...
+        </div>
+
+        <div id="weatherContent" class="weather-content">
+            <!-- Current Weather -->
+            <div class="current-weather">
+                <div class="location-info">
+                    <h2 id="cityName">--</h2>
+                    <p id="currentDate">--</p>
+                </div>
+                <div class="weather-main">
+                    <div class="temperature-section">
+                        <img id="weatherIcon" src="" alt="Weather icon" />
+                        <div class="temperature">
+                            <span id="temp">--</span>
+                            <span class="unit">°C</span>
+                        </div>
+                    </div>
+                    <div class="weather-description">
+                        <p id="description">--</p>
+                        <p class="feels-like">Feels like <span id="feelsLike">--</span>°C</p>
+                    </div>
+                </div>
+                <div class="weather-details">
+                    <div class="detail-item">
+                        <i class="fas fa-tint"></i>
+                        <div>
+                            <p class="detail-label">Humidity</p>
+                            <p class="detail-value" id="humidity">--</p>
+                        </div>
+                    </div>
+                    <div class="detail-item">
+                        <i class="fas fa-wind"></i>
+                        <div>
+                            <p class="detail-label">Wind Speed</p>
+                            <p class="detail-value" id="windSpeed">--</p>
+                        </div>
+                    </div>
+                    <div class="detail-item">
+                        <i class="fas fa-gauge-high"></i>
+                        <div>
+                            <p class="detail-label">Pressure</p>
+                            <p class="detail-value" id="pressure">--</p>
+                        </div>
+                    </div>
+                    <div class="detail-item">
+                        <i class="fas fa-eye"></i>
+                        <div>
+                            <p class="detail-label">Visibility</p>
+                            <p class="detail-value" id="visibility">--</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 5-Day Forecast -->
+            <div class="forecast-section">
+                <h3><i class="fas fa-calendar-alt"></i> 5-Day Forecast</h3>
+                <div id="forecastCards" class="forecast-cards">
+                    <!-- Forecast cards will be inserted here -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Temperature Calculator -->
+        <div class="temperature-calculator">
+            <h2><i class="fas fa-calculator"></i> Temperature Calculator</h2>
+            <p class="calculator-subtitle">Convert between temperature units and perform calculations</p>
+
+            <div class="calculator-container">
+                <div class="converter-section">
+                    <h3><i class="fas fa-exchange-alt"></i> Temperature Converter</h3>
+                    <div class="converter-grid">
+                        <div class="input-group">
+                            <label for="celsiusInput">Celsius (°C)</label>
+                            <input type="number" id="celsiusInput" placeholder="Enter temperature" step="0.1" />
+                        </div>
+                        <div class="input-group">
+                            <label for="fahrenheitInput">Fahrenheit (°F)</label>
+                            <input type="number" id="fahrenheitInput" placeholder="Enter temperature" step="0.1" />
+                        </div>
+                        <div class="input-group">
+                            <label for="kelvinInput">Kelvin (K)</label>
+                            <input type="number" id="kelvinInput" placeholder="Enter temperature" step="0.1" />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="calculator-section">
+                    <h3><i class="fas fa-thermometer-half"></i> Temperature Facts</h3>
+                    <div id="temperatureFacts" class="temperature-facts">
+                        <div class="fact-item">
+                            <i class="fas fa-info-circle"></i>
+                            <p>Enter a temperature in any unit to see conversions and interesting facts!</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="calculator-section">
+                    <h3><i class="fas fa-chart-line"></i> Quick Reference</h3>
+                    <div class="reference-grid">
+                        <div class="reference-item">
+                            <span class="ref-label">Absolute Zero</span>
+                            <span class="ref-value">-273.15°C / -459.67°F / 0K</span>
+                        </div>
+                        <div class="reference-item">
+                            <span class="ref-label">Water Freezes</span>
+                            <span class="ref-value">0°C / 32°F / 273.15K</span>
+                        </div>
+                        <div class="reference-item">
+                            <span class="ref-label">Room Temperature</span>
+                            <span class="ref-value">20°C / 68°F / 293.15K</span>
+                        </div>
+                        <div class="reference-item">
+                            <span class="ref-label">Body Temperature</span>
+                            <span class="ref-value">37°C / 98.6°F / 310.15K</span>
+                        </div>
+                        <div class="reference-item">
+                            <span class="ref-label">Water Boils</span>
+                            <span class="ref-value">100°C / 212°F / 373.15K</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>Weather data provided by OpenWeatherMap API</p>
+        <p class="note">Note: Replace API_KEY in config.js with your own OpenWeatherMap API key</p>
+    </footer>
+
+    <script src="config.js"></script>
+    <script src="app.js"></script>
+    <script src="temperature-calculator.js"></script>
+</body>
+</html>
