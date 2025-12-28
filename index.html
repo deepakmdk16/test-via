@@ -91,6 +91,68 @@
                 </div>
             </div>
         </div>
+
+        <!-- Temperature Calculator -->
+        <div class="temperature-calculator">
+            <h2><i class="fas fa-calculator"></i> Temperature Calculator</h2>
+            <p class="calculator-subtitle">Convert between temperature units and perform calculations</p>
+
+            <div class="calculator-container">
+                <div class="converter-section">
+                    <h3><i class="fas fa-exchange-alt"></i> Temperature Converter</h3>
+                    <div class="converter-grid">
+                        <div class="input-group">
+                            <label for="celsiusInput">Celsius (°C)</label>
+                            <input type="number" id="celsiusInput" placeholder="Enter temperature" step="0.1" />
+                        </div>
+                        <div class="input-group">
+                            <label for="fahrenheitInput">Fahrenheit (°F)</label>
+                            <input type="number" id="fahrenheitInput" placeholder="Enter temperature" step="0.1" />
+                        </div>
+                        <div class="input-group">
+                            <label for="kelvinInput">Kelvin (K)</label>
+                            <input type="number" id="kelvinInput" placeholder="Enter temperature" step="0.1" />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="calculator-section">
+                    <h3><i class="fas fa-thermometer-half"></i> Temperature Facts</h3>
+                    <div id="temperatureFacts" class="temperature-facts">
+                        <div class="fact-item">
+                            <i class="fas fa-info-circle"></i>
+                            <p>Enter a temperature in any unit to see conversions and interesting facts!</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="calculator-section">
+                    <h3><i class="fas fa-chart-line"></i> Quick Reference</h3>
+                    <div class="reference-grid">
+                        <div class="reference-item">
+                            <span class="ref-label">Absolute Zero</span>
+                            <span class="ref-value">-273.15°C / -459.67°F / 0K</span>
+                        </div>
+                        <div class="reference-item">
+                            <span class="ref-label">Water Freezes</span>
+                            <span class="ref-value">0°C / 32°F / 273.15K</span>
+                        </div>
+                        <div class="reference-item">
+                            <span class="ref-label">Room Temperature</span>
+                            <span class="ref-value">20°C / 68°F / 293.15K</span>
+                        </div>
+                        <div class="reference-item">
+                            <span class="ref-label">Body Temperature</span>
+                            <span class="ref-value">37°C / 98.6°F / 310.15K</span>
+                        </div>
+                        <div class="reference-item">
+                            <span class="ref-label">Water Boils</span>
+                            <span class="ref-value">100°C / 212°F / 373.15K</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
     <footer>
@@ -100,5 +162,6 @@
 
     <script src="config.js"></script>
     <script src="app.js"></script>
+    <script src="temperature-calculator.js"></script>
 </body>
 </html>

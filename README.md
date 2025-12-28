@@ -4,13 +4,25 @@ A modern, responsive weather forecasting application that provides current weath
 
 ## Features
 
+### Weather Forecasting
 - **Current Weather Display**: View real-time weather conditions including temperature, humidity, wind speed, pressure, and visibility
 - **5-Day Forecast**: Get a comprehensive 5-day weather forecast with daily predictions
 - **City Search**: Search for weather information by city name
 - **Geolocation Support**: Automatically detect and display weather for your current location
+- **Weather Icons**: Visual representation of weather conditions
+
+### Temperature Calculator
+- **Unit Conversion**: Convert temperatures between Celsius, Fahrenheit, and Kelvin
+- **Real-time Updates**: All temperature units update automatically as you type
+- **Temperature Facts**: Get interesting contextual information about any temperature
+- **Quick Reference**: View common temperature reference points (freezing, boiling, body temperature, etc.)
+- **Temperature Classification**: Understand if a temperature is cold, mild, warm, or hot
+- **Relative Comparisons**: See how temperatures compare to common reference points
+
+### General Features
 - **Responsive Design**: Works seamlessly on desktop, tablet, and mobile devices
 - **Beautiful UI**: Clean, modern interface with intuitive navigation
-- **Weather Icons**: Visual representation of weather conditions
+- **Interactive Elements**: Smooth animations and hover effects
 
 ## Technologies Used
 
@@ -64,28 +76,53 @@ A modern, responsive weather forecasting application that provides current weath
 
 ## Usage
 
-### Search by City
+### Weather Features
+
+#### Search by City
 
 1. Enter a city name in the search box (e.g., "London", "New York", "Tokyo")
 2. Click the "Search" button or press Enter
 3. View the current weather and 5-day forecast
 
-### Use Your Location
+#### Use Your Location
 
 1. Click the "Use My Location" button
 2. Grant location permission when prompted by your browser
 3. The app will display weather for your current location
+
+### Temperature Calculator
+
+#### Converting Temperatures
+
+1. Scroll down to the "Temperature Calculator" section
+2. Enter a temperature value in any of the three input fields:
+   - Celsius (°C)
+   - Fahrenheit (°F)
+   - Kelvin (K)
+3. The other two units will automatically update with the converted values
+4. View interesting facts and contextual information about the temperature
+
+#### Understanding Temperature Facts
+
+The calculator provides:
+- Temperature classification (extreme cold, cold, mild, warm, hot, extreme heat)
+- Comparison to water freezing point
+- Comparison to typical room temperature
+- Comparison to human body temperature
+- Information about water state at that temperature
+- Special facts for notable temperatures (absolute zero, etc.)
 
 ## Project Structure
 
 ```
 weather-forecast-app/
 │
-├── index.html          # Main HTML file with app structure
-├── styles.css          # CSS styling and responsive design
-├── app.js              # Main JavaScript application logic
-├── config.js           # Configuration file (API keys, settings)
-└── README.md           # Project documentation
+├── index.html                  # Main HTML file with app structure
+├── styles.css                  # CSS styling and responsive design
+├── app.js                      # Weather app JavaScript logic
+├── temperature-calculator.js   # Temperature calculator logic
+├── config.js                   # Configuration file (API keys, settings)
+└── README.md                   # Project documentation
 ```
 
 ## Features Breakdown
@@ -109,6 +146,14 @@ weather-forecast-app/
 - Temperature forecasts
 - Weather condition icons
 - Brief weather descriptions
+
+### Temperature Calculator Section
+
+- Three input fields for Celsius, Fahrenheit, and Kelvin
+- Real-time automatic conversion between units
+- Temperature facts panel with contextual information
+- Quick reference guide with common temperature points
+- Interactive and responsive design
 
 ## Browser Compatibility
 

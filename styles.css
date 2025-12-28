@@ -316,6 +316,155 @@ footer .note {
     margin-top: 10px;
 }
 
+/* Temperature Calculator Styles */
+.temperature-calculator {
+    background: var(--card-background);
+    border-radius: var(--border-radius);
+    padding: 30px;
+    margin-top: 30px;
+    box-shadow: var(--box-shadow-lg);
+}
+
+.temperature-calculator h2 {
+    font-size: 2rem;
+    color: var(--text-primary);
+    margin-bottom: 10px;
+}
+
+.calculator-subtitle {
+    color: var(--text-secondary);
+    margin-bottom: 30px;
+    font-size: 1.1rem;
+}
+
+.calculator-container {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.converter-section,
+.calculator-section {
+    background: var(--background-color);
+    border-radius: var(--border-radius);
+    padding: 25px;
+}
+
+.converter-section h3,
+.calculator-section h3 {
+    font-size: 1.4rem;
+    color: var(--text-primary);
+    margin-bottom: 20px;
+}
+
+.converter-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.input-group label {
+    font-weight: 600;
+    color: var(--text-primary);
+    font-size: 1rem;
+}
+
+.input-group input {
+    padding: 12px 15px;
+    border: 2px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+}
+
+.input-group input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.input-group input:hover {
+    border-color: #cbd5e1;
+}
+
+.temperature-facts {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.fact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    padding: 15px;
+    background: white;
+    border-radius: 8px;
+    border-left: 4px solid var(--primary-color);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.fact-item:hover {
+    transform: translateX(5px);
+    box-shadow: var(--box-shadow);
+}
+
+.fact-item i {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    margin-top: 3px;
+    min-width: 24px;
+}
+
+.fact-item p {
+    margin: 0;
+    color: var(--text-primary);
+    line-height: 1.6;
+}
+
+.fact-item strong {
+    color: var(--primary-color);
+}
+
+.reference-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+}
+
+.reference-item {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 15px;
+    background: white;
+    border-radius: 8px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.reference-item:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--box-shadow);
+}
+
+.ref-label {
+    font-weight: 600;
+    color: var(--text-primary);
+    font-size: 1rem;
+}
+
+.ref-value {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    font-family: 'Courier New', monospace;
+}
+
 @media (max-width: 768px) {
     header h1 {
         font-size: 2rem;
@@ -349,5 +498,21 @@ footer .note {
 
     .forecast-cards {
         grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    }
+
+    .temperature-calculator {
+        margin-top: 20px;
+    }
+
+    .calculator-container {
+        gap: 15px;
+    }
+
+    .converter-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .reference-grid {
+        grid-template-columns: 1fr;
     }
 }
