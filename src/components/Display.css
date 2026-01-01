@@ -1,0 +1,24 @@
+.display {
+  background: #1a1a1a;
+  padding: 30px 20px;
+  text-align: right;
+}
+
+.display-value {
+  color: #fff;
+  font-size: 48px;
+  font-weight: 300;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@media (max-width: 480px) {
+  .display {
+    padding: 20px 15px;
+  }
+
+  .display-value {
+    font-size: 36px;
+  }
+}
