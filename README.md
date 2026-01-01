@@ -1,40 +1,29 @@
-# Weather Forecast App
+# React Calculator App
 
-A modern, responsive weather forecasting application that provides current weather conditions and a 5-day forecast for any location worldwide.
+A simple, responsive calculator web application built with React.
 
 ## Features
 
-- **Current Weather Display**: View real-time weather conditions including temperature, humidity, wind speed, pressure, and visibility
-- **5-Day Forecast**: Get a comprehensive 5-day weather forecast with daily predictions
-- **City Search**: Search for weather information by city name
-- **Geolocation Support**: Automatically detect and display weather for your current location
-- **Responsive Design**: Works seamlessly on desktop, tablet, and mobile devices
-- **Beautiful UI**: Clean, modern interface with intuitive navigation
-- **Weather Icons**: Visual representation of weather conditions
+- Basic arithmetic operations (addition, subtraction, multiplication, division)
+- Percentage calculations
+- Sign toggle (positive/negative)
+- Decimal point support
+- Clear function
+- Responsive design that works on desktop and mobile devices
+- Modern, clean UI with smooth animations
 
 ## Technologies Used
 
-- **HTML5**: Semantic markup structure
-- **CSS3**: Modern styling with flexbox and grid layouts
-- **JavaScript (ES6+)**: Vanilla JavaScript for functionality
-- **OpenWeatherMap API**: Real-time weather data provider
-- **Font Awesome**: Icon library for enhanced UI
+- **React 18.2.0**: UI component library
+- **React Scripts**: Build tooling and development server
+- **CSS3**: Modern styling with gradients and animations
 
-## Setup Instructions
+## Prerequisites
 
-### Prerequisites
+- Node.js (v14 or higher)
+- npm or yarn
 
-- A modern web browser (Chrome, Firefox, Safari, Edge)
-- An OpenWeatherMap API key (free tier available)
-
-### Getting Your API Key
-
-1. Visit [OpenWeatherMap](https://openweathermap.org/api)
-2. Sign up for a free account
-3. Navigate to your API keys section
-4. Copy your API key
-
-### Installation
+## Installation
 
 1. Clone this repository:
    ```bash
@@ -42,73 +31,92 @@ A modern, responsive weather forecasting application that provides current weath
    cd test-via
    ```
 
-2. Open `config.js` and replace `YOUR_API_KEY_HERE` with your OpenWeatherMap API key:
-   ```javascript
-   const CONFIG = {
-       API_KEY: 'your_actual_api_key_here',
-       // ... rest of the config
-   };
+2. Install dependencies:
+   ```bash
+   npm install
    ```
 
-3. Open `index.html` in your web browser:
-   - Double-click the file, or
-   - Use a local web server (recommended):
-     ```bash
-     # Using Python 3
-     python -m http.server 8000
+3. Start the development server:
+   ```bash
+   npm start
+   ```
 
-     # Using Node.js http-server
-     npx http-server
-     ```
-   - Navigate to `http://localhost:8000` in your browser
+4. Open [http://localhost:3000](http://localhost:3000) in your browser
 
-## Usage
+## Available Scripts
 
-### Search by City
+### `npm start`
 
-1. Enter a city name in the search box (e.g., "London", "New York", "Tokyo")
-2. Click the "Search" button or press Enter
-3. View the current weather and 5-day forecast
+Runs the app in development mode.
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-### Use Your Location
+### `npm run build`
 
-1. Click the "Use My Location" button
-2. Grant location permission when prompted by your browser
-3. The app will display weather for your current location
+Builds the app for production to the `build` folder.
+It correctly bundles React in production mode and optimizes the build for the best performance.
+
+### `npm test`
+
+Launches the test runner in interactive watch mode.
+
+## Docker Deployment
+
+This application includes a production-ready Dockerfile for containerized deployment.
+
+### Building the Docker Image
+
+```bash
+docker build -t react-calculator .
+```
+
+### Running the Container
+
+```bash
+# Run on default port 8080
+docker run -p 8080:8080 react-calculator
+
+# Run on custom port using PORT environment variable
+docker run -p 3000:3000 -e PORT=3000 react-calculator
+```
+
+The application will be available at `http://localhost:8080` (or your specified port).
+
+### Docker Image Details
+
+- Multi-stage build for optimized image size
+- Uses Node.js 18 Alpine for minimal footprint
+- Serves production build using `serve`
+- Configurable port via `PORT` environment variable
+- Default port: 8080
 
 ## Project Structure
 
 ```
-weather-forecast-app/
-│
-├── index.html          # Main HTML file with app structure
-├── styles.css          # CSS styling and responsive design
-├── app.js              # Main JavaScript application logic
-├── config.js           # Configuration file (API keys, settings)
-└── README.md           # Project documentation
+react-calculator-app/
+├── public/
+│   └── index.html          # HTML entry point
+├── src/
+│   ├── App.js              # Main App component
+│   ├── App.css             # App styling
+│   ├── Calculator.js       # Calculator component with logic
+│   ├── Calculator.css      # Calculator styling
+│   ├── index.js            # React entry point
+│   └── index.css           # Global styles
+├── Dockerfile              # Production-ready container configuration
+├── .dockerignore           # Docker ignore file
+├── package.json            # Dependencies and scripts
+└── README.md               # This file
 ```
 
-## Features Breakdown
+## Usage
 
-### Current Weather Section
-
-- City name and country
-- Current date
-- Temperature (Celsius)
-- Weather description
-- "Feels like" temperature
-- Humidity percentage
-- Wind speed
-- Atmospheric pressure
-- Visibility distance
-
-### 5-Day Forecast Section
-
-- Daily weather predictions
-- Date/day labels
-- Temperature forecasts
-- Weather condition icons
-- Brief weather descriptions
+1. **Number Input**: Click on number buttons (0-9) to input numbers
+2. **Operations**: Click on operation buttons (+, -, ×, ÷) to perform calculations
+3. **Decimal**: Click the "." button to add decimal points
+4. **Clear**: Click "AC" to clear all and start over
+5. **Sign Toggle**: Click "±" to toggle between positive and negative
+6. **Percentage**: Click "%" to convert the current number to a percentage
+7. **Equals**: Click "=" to calculate the result
 
 ## Browser Compatibility
 
@@ -118,101 +126,17 @@ weather-forecast-app/
 - Edge
 - Opera
 
-## API Rate Limits
+## Responsive Design
 
-The free tier of OpenWeatherMap API includes:
-- 60 calls per minute
-- 1,000,000 calls per month
-
-This should be more than sufficient for personal use.
-
-## Customization
-
-### Change Temperature Units
-
-Edit `config.js`:
-```javascript
-UNITS: 'metric', // For Celsius (default)
-// OR
-UNITS: 'imperial', // For Fahrenheit
-```
-
-### Change Default City
-
-Edit `config.js`:
-```javascript
-DEFAULT_CITY: 'YourCityName',
-```
-
-### Customize Colors
-
-Edit the CSS variables in `styles.css`:
-```css
-:root {
-    --primary-color: #2563eb;
-    --secondary-color: #64748b;
-    /* ... modify as needed */
-}
-```
-
-## Troubleshooting
-
-### API Key Issues
-
-**Problem**: Error message about API key
-**Solution**: Ensure you've replaced `YOUR_API_KEY_HERE` in `config.js` with your actual API key
-
-### City Not Found
-
-**Problem**: "City not found" error
-**Solution**:
-- Check spelling of the city name
-- Try adding country code (e.g., "London,UK")
-- Use major city names for better results
-
-### Geolocation Not Working
-
-**Problem**: Location detection fails
-**Solution**:
-- Ensure you've granted location permission in your browser
-- Check if your browser supports geolocation
-- Use HTTPS or localhost for geolocation to work
-
-### CORS Issues
-
-**Problem**: Network errors when loading the page
-**Solution**: Use a local web server instead of opening the HTML file directly
-
-## Future Enhancements
-
-Potential features for future versions:
-- Hourly forecast
-- Weather maps
-- Multiple location tracking
-- Weather alerts
-- Historical weather data
-- Unit conversion toggle (Celsius/Fahrenheit)
-- Dark mode
-- Weather trends and graphs
-- Save favorite locations
-
-## Credits
-
-- Weather data provided by [OpenWeatherMap](https://openweathermap.org/)
-- Icons by [Font Awesome](https://fontawesome.com/)
+The calculator is fully responsive and optimized for:
+- Desktop screens (1920px and above)
+- Tablets (768px - 1024px)
+- Mobile devices (320px - 767px)
 
 ## License
 
 This project is open source and available for personal and educational use.
 
-## Contributing
-
-Contributions, issues, and feature requests are welcome!
-
 ## Author
 
-Built with care for accurate and accessible weather information.
-
----
-
-**Note**: This application requires an active internet connection to fetch weather data from the OpenWeatherMap API.
+Built with React for a simple, efficient calculator experience.
